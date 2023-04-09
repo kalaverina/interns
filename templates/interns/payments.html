@@ -1,0 +1,6 @@
+{% include 'interns/payment_list.html' %}
+<form method="POST">
+    {% csrf_token %}
+    {{ payment }}
+    <input type="submit" value="Submit">
+</form>

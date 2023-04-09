@@ -1,0 +1,9 @@
+<p>Recent payments</p>
+{% block content %}
+    Id Use Id Date Sum Comment
+{% for enter in payment_list %}
+    <p> {{ enter.id }} {{ enter.user_id }} {{ enter.date }} {{ enter.sum }} {{ enter.comment }} </p>
+{% endfor %}
+{% endblock %}
+
+{{ payment_list }}
