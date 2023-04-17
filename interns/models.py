@@ -3,24 +3,22 @@ from django.contrib.auth.models import User
 
 
 class User(models.Model):
-    user = models.OneToOneField(User, models.CASCADE)
-    #user_id = models.IntegerField()
-    user_name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     birth_date = models.IntegerField()
     e_mail = models.EmailField(max_length=50)
-    phone = models.IntegerField()
-    city = models.CharField(max_length=5)
-    telegram_nickname = models.CharField(max_length=5)
-    youtrack_login = models.CharField(max_length=5)
+    phone = models.IntegerField()  # ???
+    city = models.CharField(max_length=20)
+    telegram_nickname = models.CharField(max_length=30)
+    youtrack_login = models.CharField(max_length=5)  # ???
     edu_lvl = models.CharField(max_length=5)
-    edu_institut = models.CharField(max_length=5)
-    edu_spec = models.CharField(max_length=5)
-    resume_title = models.CharField(max_length=5)
-    cover_letter_text = models.CharField(max_length=5)
-    skills = models.CharField(max_length=5)
-    skills_detailed = models.CharField(max_length=5)
-    role = models.CharField(max_length=5)
+    edu_university = models.CharField(max_length=5)
+    edu_spec = models.CharField(max_length=20)
+    resume_title = models.CharField(max_length=20)
+    cover_letter_text = models.CharField(max_length=5)  # ???
+    skills = models.CharField(max_length=5)  # ???
+    skills_detailed = models.CharField(max_length=5)  # ???
+    role = models.CharField(max_length=15)
 
     def __str__(self):
         return str(self.id)

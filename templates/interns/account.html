@@ -1,6 +1,25 @@
 <p> Information</p>
 
-<p><a href="/edit_account">Edit</a></p>
-{{ values }}
+<form action="" method="post">
+    {% csrf_token %}
+<input type="submit" name="edit" value="Edit account" />
+<input type="submit" name="logout" value="Logout" />
+</form>
 
-{{ payments }}
+<p> Name {{ values.name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> Email {{ values.e_mail}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> City {{ values.city}}</p>
+<p> SurName {{ values.telegram_nickname}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> Skills {{ values.skills}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p> SurName {{ values.last_name}}</p>
+<p>{{payments}}</p>
