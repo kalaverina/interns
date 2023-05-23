@@ -19,8 +19,8 @@ def account(request):
         return redirect('/authorization/')
     else:
         user_info = models.User.objects.get(pk=1)
-        user_fields = models.User().get_field_names()
-        #res = dict(map(lambda i, j: (i, j), user_fields.get_field_names, user_info))
+        obj = models.Tag.objects.get(pk=1)
+
         context = {'values': user_info,
                    'payments': models.Payment.objects.filter(user=1).values()}
     return render(request, 'interns/account.html', context)

@@ -1,3 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-body">
+    <div class="container">
+    <h1 class="text-center">Articles</h1>
+    <div class="  mb-2">
+        {%if request.GET.tag %}
+            <p>Showing articles with tag: {{request.GET.tag}}</p>
+            <a href="{% url 'user'%}" class="btn btn-sm btn-outline-secondary">Remove Tag Filter</a>
+        {%else %}
+            <p>No Tag Filter. Showing all articles.</span></p>
+        {%endif%}
+    </div>
+
+    {% for user in users %}
+    <div class="row mb-4 border-top">
+        <div class="col">
+            <h2>{{ user.name }}</h2>
+            <div class="text-muted">
+                by {{ user.city }}
+            </div>
+            <p>{{ user.surname }}</p>
+            {%if user.tags %}
+            <div class="row">
+                <div class="col">
+                    {%for user_tag in user.tags.all %}
+                    <a href="{% url 'users'%}?tag={{user_tag}}" class="btn btn-sm btn-outline-secondary">{{user_tag}}</a>
+                    {%endfor %}
+                </div>
+            </div>
+            {%endif%}
+
+        </div>
+    </div>
+    {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
+
+<!--
 <p> Information</p>
 
 <form action="" method="post">
@@ -6,14 +47,15 @@
 <input type="submit" name="logout" value="Logout" />
 </form>
 
+for n in
 <p> Name {{ values.name}}</p>
 <p> SurName {{ values.last_name}}</p>
-<p> Email {{ values.e_mail}}</p>
-<p> SurName {{ values.last_name}}</p>
+<p> Birth Day {{ values.birth_date}}</p>
+<p> E-mail {{ values.e_mail}}</p>
+<p> Phone {{ values.phone}}</p>
 <p> City {{ values.city}}</p>
-<p> SurName {{ values.telegram_nickname}}</p>
-<p> SurName {{ values.last_name}}</p>
-<p> SurName {{ values.last_name}}</p>
+<p> Telegram {{ values.telegram_nickname}}</p>
+<p> YouTrack Login {{ values.youtrack_login}}</p>
 <p> SurName {{ values.last_name}}</p>
 <p> SurName {{ values.last_name}}</p>
 <p> SurName {{ values.last_name}}</p>
@@ -23,3 +65,5 @@
 <p> SurName {{ values.last_name}}</p>
 <p> SurName {{ values.last_name}}</p>
 <p>{{payments}}</p>
+-->
+
